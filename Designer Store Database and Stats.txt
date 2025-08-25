@@ -1,0 +1,31 @@
+-- Create a designer store database
+
+CREATE TABLE Designer_Clothes_LLC (id INTEGER PRIMARY KEY, Name TEXT, Price INTEGER, Article TEXT, Season TEXT, Collection_Year INTEGER);
+
+INSERT INTO Designer_Clothes_LLC VALUES (1, "Armani", 240, "Top", "Spring", 2016);
+INSERT INTO Designer_Clothes_LLC VALUES (2, "Fendi", 600, "Sandals", "Summer", 2021);
+INSERT INTO Designer_Clothes_LLC VALUES (3, "Ralph Lauren", 500, "Button Up", "Fall", 2010);
+INSERT INTO Designer_Clothes_LLC VALUES (4, "Saint Laurent", 2000, "Suit", "Winter", 2015);
+INSERT INTO Designer_Clothes_LLC VALUES (5, "Louis Vitton", 500, "Wallet", "Fall", 2005);
+INSERT INTO Designer_Clothes_LLC VALUES (6, "Ralph Lauren", 890, "Button Up", "Spring", 2018);
+INSERT INTO Designer_Clothes_LLC VALUES (7, "Hermes", 30000, "Birkin", "Summer", 2020);
+INSERT INTO Designer_Clothes_LLC VALUES (8, "Ralph Lauren", 150, "Kahki Pants", "Spring", 2010);
+INSERT INTO Designer_Clothes_LLC VALUES (9, "Versace", 50, "Oversized Polo", "Spring", 2022);
+INSERT INTO Designer_Clothes_LLC VALUES (10, "Tom Ford", 350, "Underwear", "Summer", 2021);
+INSERT INTO Designer_Clothes_LLC VALUES (11, "Gucci", 1000, "Belt", "Fall", 2020);
+INSERT INTO Designer_Clothes_LLC VALUES (12, "Prada", 850, "Purse", "Spring", 2021);
+INSERT INTO Designer_Clothes_LLC VALUES (13, "Kate Spade", 50, "Scarf", "Fall", 2010);
+INSERT INTO Designer_Clothes_LLC VALUES (14, "Hermes", 500, "Long Wallet", "Spring", 2022);
+INSERT INTO Designer_Clothes_LLC VALUES (15, "Versace", 80, "Jeans", "Fall", 2021);
+
+--total cost of all clothes in store inventory
+SELECT SUM (Price) FROM Designer_Clothes_LLC;
+
+--total cost of clothes based on season of the year
+SELECT Season, SUM (Price) FROM Designer_Clothes_LLC GROUP BY Season;
+
+--clothes ordered by price from lowest to highest
+SELECT * FROM Designer_Clothes_LLC WHERE Price > 30 ORDER BY Price; 
+
+--clothes ordered alphabetically from a-z
+SELECT * FROM Designer_Clothes_LLC ORDER BY Name;
